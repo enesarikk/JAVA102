@@ -94,33 +94,33 @@ public class MyList<T> {
         return -1;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return this.size == 0;
     }
 
-    public T[] toArray(){
+    public T[] toArray() {
         T[] newArray = (T[]) new Object[this.size];
-        for(int i = 0; i < this.size; i++){
+        for (int i = 0; i < this.size; i++) {
             newArray[i] = this.arr[i];
         }
         return newArray;
     }
 
-    public void clear(){
+    public void clear() {
         this.arr = (T[]) new Object[this.capacity];
         this.size = 0;
     }
 
-    public MyList<T> sublist(int start, int finish){
-        if(start < 0 || finish > this.size || start > finish) return null;
+    public MyList<T> sublist(int start, int finish) {
+        if (start < 0 || finish > this.size || start > finish) return null;
         MyList<T> sub = new MyList<>(finish - start);
-        for(int i = start; i < finish; i++){
+        for (int i = start; i < finish; i++) {
             sub.add(this.get(i));
         }
         return sub;
     }
 
-    public boolean contains(T data){
+    public boolean contains(T data) {
         return indexOf(data) != -1;
     }
 
